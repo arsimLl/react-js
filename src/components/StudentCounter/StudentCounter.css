@@ -1,0 +1,23 @@
+.btn-group .btn-green {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+}
+
+.btn-group .btn-red {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: red;
+    color: white;
+}
+
+.btn-group .btn-gray {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: gray;
+    color: white;
+}
