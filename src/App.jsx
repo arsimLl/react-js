@@ -1,76 +1,36 @@
-import './App.css'
-// import State from './components/State'
-// import StatusMessage from './components/StatusMessage'
-// import UseEffect from './components/UseEffect'
-// import WelcomeComponent from './components/WelcomeComponents'
-// import StudentsList from './components/StudentsList'
-// import UseStateComponent from './components/useStateComponent'
-// import ClickEvents from './components/ClickEvents'
-// import OnChangeEvent from './components/OnChangeEvent'
-// import TwoStateComponent from './components/TwoStateComponent'
-// import DarkMode from './components/DarkMode'
-// import RenderLists from './components/Lists/Render.Lists'
-// import RenderListsObjects from './components/Lists/RenderListsObjects'
-// import Courses from './components/Lists/Courses'
-// import Movies from './components/Lists/Movies'
-import Student from './components/StudentCounter/Student'
-import AvailableCourses from './components/StudentCounter/AvailableCourses'
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
+import NotFound from "./pages/NotFound"
+import Header from "./components/Header"
+import ProductDetail from "./components/ProductDetail"
+import Products from "./components/Products"
 
 function App() {
 
-  const courses = [
-    {
-      id: 1,
-      title: "react",
-      instructor: "Arsim",
-      price: 250
-    },
-
-    {
-      id: 2,
-      title: "javascript",
-      instructor: "Egzon",
-      price: 350
-    },
-
-    {
-      id: 3,
-      title: "html & css",
-      instructor: "Elton",
-      price: 200
-    }
-  ]
 
 
 
 
   return (
     <>
-      {/* <State />
-      <UseEffect />
-      <WelcomeComponent isLoggedIn={false} />
-      <StatusMessage isOnline={true} />
-      <StudentsList />
-      <UseStateComponent />
-      <ClickEvents />
-      <OnChangeEvent />
-      <TwoStateComponent />
-      <DarkMode />
-      <RenderLists />
-      <RenderListsObjects />
-    
-      {
-        courses.map(course => (
-          <Courses
-            title={course.title}
-            instructor={course.instructor}
-            price={course.price}
-            key={course.id}
-          />
-        ))
-      } */}
-      <Student />
-      <AvailableCourses />
+
+      <div>
+
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+
+
     </>
   )
 }
